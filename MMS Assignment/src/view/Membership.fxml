@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="center" spacing="20" styleClass="background" prefHeight="400.0" prefWidth="800.0" fx:controller = "controller.MembershipController">
+    <padding>
+        <Insets top="10" bottom="10" left="5" right="5" />
+    </padding>
+    <GridPane styleClass="header" alignment = "CENTER" vgap="10">
+        <Label text = "Personal Details" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass = "label-h2" />
+        <Label text = "Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass = "label-opac"/>
+        <Label text = "Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass = "label-opac"/>
+        <Label text = "Phone:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass = "label-opac"/>
+        <Label text = "Address:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass = "label-opac"/>
+        <TextField minWidth="400" fx:id = "nameText" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <TextField fx:id = "emailText" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <TextField fx:id = "phoneText" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <TextField fx:id = "addressText" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    </GridPane>
+    <Separator/>
+
+    <GridPane styleClass="header" alignment = "CENTER" vgap="10">
+        <Label text = "Membership Details" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass = "label-h2"/>
+        <Label text = "ID:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass = "label-opac"/>
+        <Label text = "Expense:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass = "label-opac"/>
+        <Label text = "Type:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass = "label-opac"/>
+        <TextField minWidth="400" fx:id = "idText" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <TextField fx:id = "expenseText" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Text text = "${controller.membership.type}" fx:id = "typeT" styleClass="text-out" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+
+    </GridPane>
+
+    <HBox alignment="CENTER" spacing = "10" >
+        <Button text= "Add"  fx:id = "addButton" onAction="#prsAdd"/>
+        <Button onAction="#prsUpdate" text= "Update" fx:id = "updateButton"/>
+        <Button onAction="#close" text= "Close" />
+    </HBox>
+
+    <stylesheets>
+        <URL value="@mmsfx.css"/>
+    </stylesheets>
+
+</VBox>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="center" prefHeight="650.0" prefWidth="1300.0" styleClass="background" spacing="10"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller = "controller.MMSController">
+    <VBox alignment="TOP_CENTER" >
+        <TableView fx:id = "mmsTv"  prefWidth="550" items = "${controller.MMS.memberships}" >
+            <columns>
+                <TableColumn text="Name" fx:id = "nameCol" prefWidth="162.5">
+                    <cellValueFactory>
+                        <PropertyValueFactory property = "name"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Type" fx:id = "typeCol" prefWidth="162.5">
+                    <cellValueFactory>
+                        <PropertyValueFactory property = "type"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Expense" fx:id = "expenseCol" prefWidth="162.5">
+                    <cellValueFactory>
+                        <PropertyValueFactory property = "expense"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Credits" fx:id = "creditsCol" prefWidth="162.5">
+                    <cellValueFactory>
+                        <PropertyValueFactory property = "totalCredits"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="GasdeductionRate" fx:id = "gasCol" prefWidth="162.5">
+                    <cellValueFactory>
+                        <PropertyValueFactory property = "GasdeductionRate"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="DeductionRate" fx:id = "deducCol" prefWidth="162.5">
+                    <cellValueFactory>
+                        <PropertyValueFactory property = "deductionRate"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="PayPerCredit" fx:id = "payperCol" prefWidth="162.5">
+                    <cellValueFactory>
+                        <PropertyValueFactory property = "PayPerCredit"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Dollar Available" fx:id = "dollaCol" prefWidth="162.5">
+                    <cellValueFactory>
+                        <PropertyValueFactory property = "dollarAvailable"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </VBox>
+    <Separator/>
+    <GridPane alignment = "CENTER" hgap="20" >
+        <Label text = "Total Expense:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Text  styleClass = "text-out" GridPane.columnIndex="1" GridPane.rowIndex="0" text = "${controller.MMS.totalExpense}"/>
+        <Label text = "AvgGasdeductionRate:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Text styleClass = "text-out" GridPane.columnIndex="1" GridPane.rowIndex="1" text = "${controller.MMS.avgGasdeductionRate}"/>
+        <Label text = "AvgPayPerCredit:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Text styleClass = "text-out" GridPane.columnIndex="1" GridPane.rowIndex="2" text = "${controller.MMS.avgPayPerCredit}"/>
+        <Label text = "TotalCredits:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <Text styleClass = "text-out" GridPane.columnIndex="3" GridPane.rowIndex="0" text = "${controller.MMS.totalCredits}"/>
+        <Label text = "AvgDeductionRate:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <Text styleClass = "text-out" GridPane.columnIndex="3" GridPane.rowIndex="1" text = "${controller.MMS.avgdeductionRate}"/>
+        <Label text = "TotalDollarAvailable:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+        <Text styleClass = "text-out" GridPane.columnIndex="3" GridPane.rowIndex="2" text = "${controller.MMS.totalDollarAvailable}"/>
+    </GridPane>
+    <Separator/>
+    <Button text = "Close" alignment="CENTER" onAction = "#pressCloseBtn"/>
+    <stylesheets>
+        <URL value="@mmsfx.css"/>
+    </stylesheets>
+
+</VBox>
